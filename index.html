@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo do HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>꧁MUNDO DO HTML꧂</h1>
+    </header>
+    <nav>
+        <a href wm-nav="atividades/teste.html">00 - Teste/Requisição AJAX<br></a>
+        <a href wm-nav="atividades/texto1.html">01 - TAGs para textos e espaçamento<br></a>
+        <a href wm-nav="atividades/texto2.html">02 - TAGs para textos<br></a>
+        <a href wm-nav="atividades/listas.html">03 - Listas<br></a>
+        <a href wm-nav="atividades/listaAninhada.html">04 - Lista Aninhada e Abrir/Fechar Display<br></a>
+        <a href wm-nav="atividades/links.html">05 - Links<br></a>
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        Feito para o aprendizado! ☺⍢
+        <br>
+        Copyright by Robson
+    </footer>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link => { //o 'a' é a tag
+            const conteudo = document.getElementById('conteudo')
+            
+            link.onclick = function(e) { //evento que recebe do clique
+                e.preventDefault()
+                fetch(link.getAttribute('wm-nav')) //chamada ajax
+                    .then(resp => resp.text()) //pega o conteudo html da página que fez uma requisição
+                    .then(html => conteudo.innerHTML = html)
+            }
+            /*pega todos os links e selecionar todas as tags [wm-nav], tem q retornar uma lista de tags, por isso do forEach,
+            ele pegará todos os links de "href wm-nav"... No link.onclick chamará uma função quando o usuário clicar
+            e.preventDefault() vai previnir que a navegação ocorra
+            fetch = chamada/requisição ajax do link, then(resp => resp.text()) = serve para pegar o conteudo html da pagina/requisição do link,
+            then(html => conteudo.innerHTML = html) = serve para substituir o conteudo da section que tem o id conteudo pelo conteudo do html pego anteriormente*/
+        })
+    </script>
+</body>
+</html>

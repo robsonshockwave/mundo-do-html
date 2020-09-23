@@ -1,0 +1,72 @@
+<p><b>Lista alinhada: </b>coloca dentro de um item de uma lista outra lista. Para isso usamos ﹤ul﹥ para criar uma lista e ﹤li﹥ para criar um item da lista.</p>
+<ul class="tree">
+    <li>
+        <span wm-folder>backend</span>
+        <ul>
+            <li>
+                <span wm-folder>app</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span wm-folder>config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span wm-folder>frontend</span>
+        <ul>
+            <li>
+                <span wm-folder>public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
+        folder.onclick = function(e) { //função recebendo um evento
+            const ul = folder.nextElementSibling
+            const d = ul.style.display //visibilidade
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+    })
+/*primeiro vai selecionar todos os elementos que está marcado com a propriedade especial "wm-folder" no span,
+depois irá fazer um forEach pra pegar cada um dos elementos, e quando clicar nesses elementos, através do onclick
+irá disparar uma função que recebe um evento.
+const ul = folder.nextElementSibling ➽ vai pegar o elemento depois do span, ou seja, será a ul.
+const d = ul.style.display ➽ vai pegar o display da ul, ou seja, todos os seus <li> dentro.
+ul.style.display = d === 'none' ? 'block' : 'none' ➽ operação ternária... se o display for estritamente igual a 
+none recebe block para ficar invisível, caso contrário receberá none para ficar invisível.*/
+</script>
+
+<p><b>Abrir e Fechar Display: </b>o exemplo acima foi utilizado esse método. Segue abaixo o código e a explicação dele.</p>
+<p>
+    <h3>Código em JS</h3>
+    document.querySelectorAll('[wm-folder]').forEach(folder => {<br>
+    folder.onclick = function(e) { //função recebendo um evento<br>
+    const ul = folder.nextElementSibling<br>
+    const d = ul.style.display<br> //visiblidade
+    ul.style.display = d === 'none' ? 'block' : 'none'<br>
+    }<br>
+    })<br>
+    <h3>Explicação</h3>
+    Primeiro vai selecionar todos os elementos que está marcado com a propriedade especial "wm-folder" no span, depois irá fazer um forEach pra pegar cada um dos elementos, e quando clicar nesses elementos através do onclick irá disparar uma função que recebe um evento. <br>
+    const ul = folder.nextElementSibling ➽ vai pegar o elemento depois do span, ou seja, será a ul. <br>
+    const d = ul.style.display ➽ vai pegar o display da ul, ou seja, todos os seus ﹤li﹥ dentro. <br>
+    ul.style.display = d === 'none' ? 'block' : 'none' ➽ operação ternária... se o display for estritamente igual a none recebe block para ficar invisível, caso contrário receberá none para ficar invisível.
+</p>

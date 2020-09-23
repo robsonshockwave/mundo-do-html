@@ -1,0 +1,21 @@
+<h1>Funcionou!!!</h1>
+<p>
+    <h3>Código em JS</h3>
+    document.querySelectorAll('[wm-nav]').forEach(link => { //o 'a' é a tag<br>
+    const conteudo = document.getElementById('conteudo')<br>
+    <br>
+    link.onclick = function(e) { //evento que recebe do clique<br>
+    e.preventDefault()<br>
+    fetch(link.getAttribute('wm-nav')) //chamada ajax<br>
+    .then(resp => resp.text()) //pega o conteudo html da página que fez uma requisição<br>
+    .then(html => conteudo.innerHTML = html)<br>
+    }<br>
+</p>
+<p>
+    <h3>Explicação</h3>
+    Pega todos os links e seleciona todas as tags [wm-nav], tem que retornar uma lista de tags, por isso do forEach, ele pegará todos os links de "href wm-nav"... No link.onclick chamará uma função quando o usuário clicar. <br>
+    e.preventDefault() = vai previnir que a navegação ocorra. <br>
+    fetch = chamada/requisição ajax do link. <br> 
+    then(resp => resp.text()) = serve para pegar o conteudo html da pagina/requisição do link. <br>
+    then(html => conteudo.innerHTML = html) = serve para substituir o conteudo da section que tem o id conteudo pelo conteudo do html pego anteriormente. <br>
+</p>
