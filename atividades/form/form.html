@@ -1,6 +1,59 @@
 <h1>Formulário</h1>
-
-<form action="http://localhost:3003/usuarios" method="POST">
+<p>Usa-se &lt;form action="" method=""&gt; para criar/dar início a um formulário.</p>
+<form method="POST">
+    <p>Usa-se &lt;input type="hidden" name="" value=""&gt; para ser um campo escondido, geralmente usa-se isso com id. Serve pra carregar um valor escondido que não quer mostrar pro usuário.</p>
+    <input type="hidden" name="id" value="3">
+    <p>Usa-se &lt;input type="text" name=""&gt; para um campo que aparece a entrada ao digitar.</p>
     <input type="text" name="nome">
-    <button>Incluir</button>
+    <p>Usa-se &lt;input type="password" name=""&gt; para um campo que <b>não</b> aparece a entrada ao digitar.</p>
+    <input type="password" name="senha">
+    <p>Usa-se &lt;textarea name="" rows="10" cols="30"&gt; para criar uma caixa para poder escrever um texto.</p>
+    <textarea name="bio" rows="10" cols="30"></textarea>
+    <p>Usa-se várias &lt;input type="radio" name="" value=""&gt; dentro de uma div para que mostre a seleção de opções para que o usuário selecione somente <b>uma</b> opção.</p>
+    <div class="">
+        <input type="radio" name="tipo" value="admin"> Admin
+        <input type="radio" name="tipo" value="regular"> Regular
+        <input type="radio" name="tipo" value="professor"> Professor
+    </div>
+    <p>Usa-se &lt;input type="checkbox" name="" value=""&gt; dentro de uma div para que mostre a seleção de opções para que o usuário selecione as opções.</p>
+    <div>
+        <input type="checkbox" name="ativo" value="ativo"> Ativo
+    </div>
+    <p>Usa-se várias &lt;option value=""&gt; dentro de um &lt;select name=""&gt; para que mostre a seleção de opções para que o usuário selecione somente <b>uma</b> opção.</p>
+    <select name="estado">
+        <option value="">Selecione</option>
+        <option value="ac">Acre</option>
+        <option value="mg">Minas Gerais</option>
+        <option value="ba">Bahia</option>
+    </select>
+    <p>Usa-se várias &lt;option value="" multiple size="7"&gt;(ou outro número) dentro de um &lt;select name=""&gt; para que mostre a seleção de opções para que o usuário selecione as opções.</p>
+    <select name="interesses" multiple size="7">
+      <option value="js">Javascript</option>
+      <option value="java">Java</option>
+      <option value="python">Python</option>
+      <option value="c">C</option>
+      <option value="r">R</option>
+      <option value="ruby">Ruby</option>
+    </select>
+    <p>Usa-se &lt;button formaction="" formmethod=""&gt; para que, ao clicar envie o formulário. Precisa estar dentro do &lt;form&gt;</p>
+    <button formaction="http://localhost:3003/usuarios">Incluir</button>
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
 </form>
+
+<style>
+    input,
+    textarea,
+    select {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+        display: inline;
+    }
+</style>
+
+<h2>Observações</h2>
+<p>O name="" será a chave do valor que irá pro backend.</p>
+<p>O value="" será o valor que irá pro backend.</p>
