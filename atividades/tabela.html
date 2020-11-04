@@ -1,0 +1,99 @@
+<!-- Tabela -->
+
+<table border="1"> <!-- border="1" coloca um traçado na tabela toda -->
+    <caption>Produtos</caption> <!-- <caption> o que representa uma tabela -->
+    <thead> <!-- define a área do cabeçalho da tabela -->
+        <tr> <!-- <tr> é um linha -->
+            <th>Produto</th> <!-- <th> como se fosse uma coluna -->
+            <th>Preço</th> <!-- <th> = table header = cabeçalho da tabela -->
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr> <!-- tr = table row = linha da tabela -->
+    </thead>
+    <tbody> <!-- corpo da tabela -->
+        <tr> <!-- uma linha dentro da tabela -->
+            <td>iPad</td> <!-- td = table data = dados da tabela-->
+            <td>3289,00</td>
+            <td>5</td>
+            <td>16445,00</td>
+        </tr>
+        <tr>
+            <td>Motorola One</td>
+            <td>1700,00</td>
+            <td>1</td>
+            <td>1700,00</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" rowspan="2">Total</td> <!-- colspan="3" come 3 colunas da tabela e junta em uma, rolspan="2" come 2 linhas da tabela e junta em uma -->
+            <td>18145,00</td>
+        </tr>
+        <tr>
+            <td>teste</td>
+        </tr>
+    </tfoot>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    thead tr {
+        border-bottom: solid 3px #444;
+    }
+
+    tbody tr:hover {
+        background-color: #dedede;
+    }
+
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>
+
+
+<p><b>Tabela: </b>um exemplo de código de criação de tabela e para que serve cada tag:</p>
+<p>
+&lt;table border="1"&gt; &rarr;&rarr;&rarr; border="1" coloca um traçado na tabela toda <br>
+ㅤㅤ&lt;caption&gt;Produtos&lt;/caption&gt; &rarr;&rarr;&rarr; &lt;caption&gt; o que representa uma tabela <br>
+ㅤㅤ&lt;thead&gt; &rarr;&rarr;&rarr; define a área do cabeçalho da tabela <br>
+ㅤㅤㅤㅤ&lt;tr&gt; &rarr;&rarr;&rarr; &lt;tr&gt; é um linha <br>
+ㅤㅤㅤㅤㅤㅤ&lt;th&gt;Produto&lt;/th&gt; &rarr;&rarr;&rarr; &lt;th&gt; como se fosse uma coluna <br>
+ㅤㅤㅤㅤㅤㅤ&lt;th&gt;Preço&lt;/th&gt; &rarr;&rarr;&rarr; &lt;th&gt; = table header = cabeçalho da tabela <br>
+ㅤㅤㅤㅤㅤㅤ&lt;th&gt;Quantidade&lt;/th&gt;<br>
+ㅤㅤㅤㅤㅤㅤ&lt;th&gt;Total&lt;/th&gt;<br>
+ㅤㅤㅤㅤ&lt;/tr&gt; &rarr;&rarr;&rarr; tr = table row = linha da tabela <br>
+ㅤㅤ&lt;/thead&gt;<br>
+ㅤㅤ&lt;tbody&gt; &rarr;&rarr;&rarr; corpo da tabela <br>
+ㅤㅤㅤㅤ&lt;tr&gt; &rarr;&rarr;&rarr; uma linha dentro da tabela <br>
+ㅤㅤㅤㅤㅤㅤ&lt;td&gt;iPad&lt;/td&gt; &rarr;&rarr;&rarr; td = table data = dados da tabela<br>
+ㅤㅤㅤㅤㅤㅤ&lt;td&gt;3289,00&lt;/td&gt;<br>
+ㅤㅤㅤㅤㅤㅤ&lt;td&gt;5&lt;/td&gt;<br>
+ㅤㅤㅤㅤㅤㅤ&lt;td&gt;16445,00&lt;/td&gt;<br>
+ㅤㅤㅤㅤ&lt;/tr&gt;<br>
+ㅤㅤㅤㅤ&lt;tr&gt;<br>
+ㅤㅤㅤㅤㅤㅤ&lt;td&gt;Motorola One&lt;/td&gt;<br>
+ㅤㅤㅤㅤㅤㅤ&lt;td&gt;1700,00&lt;/td&gt;<br>
+ㅤㅤㅤㅤㅤㅤ&lt;td&gt;1&lt;/td&gt;<br>
+ㅤㅤㅤㅤㅤㅤ&lt;td&gt;1700,00&lt;/td&gt;<br>
+ㅤㅤㅤㅤ&lt;/tr&gt;<br>
+ㅤㅤ&lt;/tbody&gt;<br>
+ㅤㅤ&lt;tfoot&gt;<br>
+ㅤㅤㅤㅤ&lt;tr&gt;<br>
+ㅤㅤㅤㅤㅤㅤ&lt;td colspan="3" rowspan="2"&gt;Total&lt;/td&gt; &rarr;&rarr;&rarr; colspan="3" come 3 colunas da tabela e junta em uma, rolspan="2" come 2 linhas da tabela e junta em uma <br>
+ㅤㅤㅤㅤㅤㅤ&lt;td&gt;18145,00&lt;/td&gt;<br>
+ㅤㅤㅤㅤ&lt;/tr&gt;<br>
+ㅤㅤㅤㅤ&lt;tr&gt;<br>
+ㅤㅤㅤㅤㅤㅤ&lt;td&gt;teste&lt;/td&gt;<br>
+ㅤㅤㅤㅤ&lt;/tr&gt;<br>
+ㅤㅤ&lt;/tfoot&gt;<br>
+&lt;/table>
+</p>

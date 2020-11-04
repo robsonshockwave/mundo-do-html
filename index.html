@@ -21,6 +21,8 @@
         <a href wm-nav="atividades/listas.html">03 - Listas<br></a>
         <a href wm-nav="atividades/listaAninhada.html">04 - Lista Aninhada e Abrir/Fechar Display<br></a>
         <a href wm-nav="atividades/links.html">05 - Links<br></a>
+        <a href wm-nav="atividades/tabela.html">06 - Tabela<br></a>
+        <a href wm-nav="atividades/form/form.html">07 - Formulário<br></a>
     </nav>
     <section id="conteudo"></section>
     <footer>
@@ -30,12 +32,12 @@
     </footer>
     <script>
         document.querySelectorAll('[wm-nav]').forEach(link => { //o 'a' é a tag
-            const conteudo = document.getElementById('conteudo')
-            
+            const conteudo = document.getElementById('conteudo') //fica na section, responsavel por trocar o conteudo
+
             link.onclick = function(e) { //evento que recebe do clique
                 e.preventDefault()
-                fetch(link.getAttribute('wm-nav')) //chamada ajax
-                    .then(resp => resp.text()) //pega o conteudo html da página que fez uma requisição
+                fetch(link.getAttribute('wm-nav')) //chamada ajax, é baseado em promise
+                    .then(resp => resp.text()) // .text() pega o conteudo html da página que fez uma requisição
                     .then(html => conteudo.innerHTML = html)
             }
             /*pega todos os links e selecionar todas as tags [wm-nav], tem q retornar uma lista de tags, por isso do forEach,

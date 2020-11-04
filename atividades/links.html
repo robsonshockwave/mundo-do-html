@@ -1,12 +1,27 @@
 <h1>Links</h1>
 
 <!-- URL Absoluta -->
-<p><b>URL absoluta: </b>para colocar um link e ao clicar para ir em uma página (sairá da atual) usa-se ﹤a href="http://link.com..."﹥. Para abrir em uma nova página usa-se ﹤a href="http://link.com..." target="_blank"﹥. Na URL Absoluta dentro de "href" é obrigatório colocar "http://" caso for indicar um site.</p>
-<a href="http://www.google.com.br">Google 1 (sairá dessa página para acessar a nova)</a><br>
+<p><b>URL absoluta: </b>para colocar um link e ao clicar para ir em uma página (sairá da atual) usa-se &lt;a href="http://link.com..."&gt. Para abrir em uma nova página usa-se &lt;a href="http://link.com..." target="_blank"&gt;. Na URL Absoluta dentro de "href" é obrigatório colocar "http://" caso for indicar um site.</p>
+<a id="inicio" href="http://www.google.com.br">Google 1 (sairá dessa página para acessar a nova)</a><br>
 <a href="http://www.google.com.br" target="black_k">Google 2 (abrirá em uma nova página)</a>
 
 <!-- URL Relativa -->
-<p><b>URL relativa: </b>acessa um arquivo .html da sua pasta ou de uma outra pasta de seu projeto. Exemplos: ﹤a href=index.html> ➩ acessa na pasta; ﹤a href=/index.html> ➩ acessa na pasta raiz; ﹤a href=../index.html>, ﹤a href=../../index.html>... ➩ acessa fora da pasta.</p>
+<p><b>URL relativa: </b>acessa um arquivo .html da sua pasta ou de uma outra pasta de seu projeto. Exemplos: &lt;a href=index.html> &rightarrow; acessa na pasta; &lt;a href=/index.html> &rightarrow; acessa na pasta raiz; &lt;a href=../index.html>, &lt;a href=../../index.html>... &rightarrow; acessa fora da pasta.</p>
 <a href="index.html">Voltar 1</a><br>
 <a href="/index.html">Voltar 2</a><br> <!-- acessa a pasta raiz da aplicação -->
 <a href="../index.html">Voltar 3</a>
+
+<!-- URL/link de e-mail -->
+<p><b>URL/link de e-mail: </b>coloca um link de e-mail e ao clicar nele automaticamente irá abrir um provedor de e-mail. Para isso usa-se &lt;a href="mailto:emaildesejado@dominiodoemail.com"&gt.</p>
+<a href="mailto:email_nao_funciona@naofunciona.com">Entre em contato</a>
+
+<!-- URL âncora -->
+<p><b>URL âncora: </b>funciona quando clicar em algo da página te direcionar pra outro lugar da página. Usa-se &lt;a href="#idquevocecolocou"> no que vai clicar, e ele irá no &lt;a id="idquevocecolocou">.</p>
+<div id="noticia" style="position: absolute; top: 2000px;">
+    <h1>Notícia Buemba!</h1>
+    <p>Não era nada... :P</p>
+    <a href="#inicio">Voltar ínicio</a>
+</div>
+
+<a href="#noticia">Ir para Notícia</a>
+<!-- quando faz uma submissão e manda isso pro backend a url de navegador não vai pro backend, não consegue acessar a âncora que está navegando dentro da página -->
