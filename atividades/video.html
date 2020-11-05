@@ -1,0 +1,91 @@
+<h1>Vídeo</h1>
+<p>
+    Usa-se:<br>
+    &lt;video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload"&gt;<br>
+      ㅤㅤ&lt;source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4"&gt;<br>
+      ㅤㅤSeu browser não suporta a tag de vídeo.<br>
+    &lt;/video&gt;<br>
+    <i>Se o source não encontrar o vídeo ele passa a executar a opção de baixo, ali não mostrou "Seu browser não suporta a tag de vídeo."
+    porque encontrou o vídeo.</i>
+</p>
+<h3>Observações:</h3>
+<p>
+    width="" &rarr; largura do vídeo.<br>
+    height="" &rarr; altura do vídeo.<br>
+    controls &rarr; para aparecer os botões de play do vídeo, aquela barrinha de opções que fica no inferior da tela do vídeo.<br>
+    autoplay &rarr; para que ao entrar na página o vídeo começe automaticamente, sem precisar clicar no play.<br>
+    controlsList="nodownload" &rarr; para desabilitar a opção de download na barra inferior.<br>
+</p>
+<p>
+    <b>Usa-se na função do DOM:</b><br>
+    const video = document.getElementById(id)<br>
+    video.oncontextmenu = () => false //pra não deixar baixar o video com o botão direito.
+</p>
+
+<video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu browser não suporta a tag de vídeo.
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div>
+
+    </div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<hr><br>
+
+<h3>Vídeo do YouTube</h3>
+<p>No YouTube ele passa o código e é só colar no HTML.</p>
+<div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/yCJV6VrOxBA"
+  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen></iframe>
+</div>
+
+<style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+
+    .progresso > div {
+        background-color: red;
+        color: #fff;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>
+
+<script>
+    /* Desafio proposto: Controlar Vídeo através do JS
+      - Criar dois botões para controlar o play e pause do vídeo.
+      - Criar uma Progress Bar para acompanhar a progress do vídeo.
+    */
+    function configurarVideo(id) {
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false //pra não deixar baixar o video com o botão direito
+
+        document.querySelector(`[wm-play=${id}]`).onclick = () => video.play() //poderia colocar o e, que é o evento
+        document.querySelector(`[wm-pause=${id}]`).onclick = e => video.pause()
+
+        //Barra de progresso
+        setInterval(() => {
+            const percentual = (video.currentTime / video.duration) * 100
+            const valorDiv = document.querySelector(`[wm-progresso=${id}] > div`)
+            valorDiv.style.width = `${percentual}%` //percentual da largura vermelha
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%` //aqui vai passar o texto dentro de uma div através do innerHTML
+        }, 100)
+    }
+
+    configurarVideo('meuVideo')
+</script>
