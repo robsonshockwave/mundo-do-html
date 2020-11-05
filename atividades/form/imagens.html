@@ -1,0 +1,168 @@
+<h1>Imagens</h1>
+<h3>Antes de tudo:</h3>
+<p>
+    alt="" &rarr; nome da imagem, para ajuda os deficientes visuais e caso a imagem não carregue mostra somente o nome dela.<br>
+    width="" &rarr; largura da imagem.<br>
+    height="" &rarr; altura da imagem.<br>
+    title="" &rarr; ao passar o mouse mostra o nome que colocou no título.<br>
+    align="" &rarr; o local que a imagem irá ficar(left ou right) perto de um texto.
+</p>
+
+<!--<div wm-slider>-->
+    <p>Usa-se &lt;img src="site ou caminho da imagem alt="" width="" height=""&gt;</p>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+        alt="Muro da Cidade" width="513" height="342"
+        title="Muro da Cidade de Tarso Bessa">
+    </p>
+
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+         alt="Intro Cod3r" height="342">
+    </p>
+    <p>
+        <img src="https://media1.tenor.com/images/ff9ec74f688bc52337b00d5ebaa57a05/tenor.gif?itemid=15318962"
+        alt="Beijo sensual" height="342">
+    </p>
+
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+         alt="Rio de Janeiro" height="342">
+    </p>
+
+    <hr>
+
+    <p>Aqui usei &lt;img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50" align="left"&gt;</p>
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg"
+        alt="Avatar" height="50" align="left">
+        Texto khkkhgkhgk khgjkhjkghkkj jkhgjkghjkhgjk kjhgkjkghjkhgjk
+        jkghjkghkjhgjk kjgkjhkjghjkghkjghjk jkghkkjghkjghjkhg jkjkhgjkgjkghjkhgk
+        hkjhkgkjgjkjkghjkhg kjjkghjkhgjkhgjkhk kjgjkhgkjghjkhgk.
+    </p>
+
+    <hr>
+
+    <p>Tem como colocar uma imagem usando CSS. Para isso, usei:<br>
+    .cidade {<br>
+    ㅤㅤwidth: 513px;<br>
+    ㅤㅤheight: 342px;<br>
+    ㅤㅤbackground-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');<br>
+    ㅤㅤbackground-position: center;<br>
+    ㅤㅤbackground-repeat: no-repeat;<br>
+    ㅤㅤbackground-size: 200%;<br>
+    }</p>
+    <p class="cidade"></p>
+
+    <hr>
+
+    <p>Aqui usei:<br>
+        &lt;picture&gt;<br>
+        ㅤㅤ&lt;source srcset="" media="(min-width: 600px)" alt=""&gt;<br>
+        ㅤㅤ&lt;img src="" alt=""&gt;<br>
+        &lt;/picture&gt;
+    </p>
+    <h4>Atenção:</h4>
+    <p>Picture e source juntamente com media é como se fosse um if, tem que atender o requisito para aparecer, que no caso é se a
+    página tiver uma largura no mínimo de 600px (pode ser definido pelo programador), caso não passa pra próxima imagem abaixo.</p>
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+            media="(min-width: 600px)" alt="Logo"> <!-- como se fosse um if, tem que atender o requisito se a página tem uma largura no mínimo de 600px, caso não passa pra próxima imagem abaixo-->
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png"
+            alt="Logo">
+        </picture>
+    </p>
+<!--</div>-->
+
+<hr>
+
+<div wm-slider>
+    <span>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+        alt="Muro da Cidade" width="513" height="342"
+        title="Muro da Cidade de Tarso Bessa">
+    </span>
+    <span>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+        alt="Muro da Cidade" width="513" height="342"
+        title="Muro da Cidade de Tarso Bessa">
+    </span>
+</div>
+
+<style>
+    span {
+        position: absolute;
+        display: none;
+    }
+
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+
+    .texto {
+        width: 400px;
+    }
+
+    .texto img {
+        margin-right: 10px;
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+    }
+</style>
+
+<script>
+//
+    function mover(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo //iniciou o elemento então vai diminuir o passo, ou seja, a cada vez
+        if(novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+        } else {
+            callback()
+        }
+    }
+
+    /*
+    const p = document.querySelector('[wm-slider] > p')
+    p.style.display = 'block'
+    mover(p, 1500, -520, 5, () => {
+        console.log('Terminou!!!')
+    })
+    */
+
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > span') //vai pegar todas as tags do tipo p que está dentro de wm-slider, vai transformar em um node list
+        const slides = Array.from(elementos) //transformou os elementos em um array de slides
+        exibirSlide(slides, slides[0])
+    }
+
+    function exibirSlide(slides, slide) {
+        slide.style.display = 'block'
+
+        const inicio = innerWidth //vai dar a largura da página
+        const fim = -slide.clientWidth //- a largura da tag p
+
+        slide.style.left = `${inicio}px`
+
+        mover(slide, inicio, fim, 5, () => {
+            slide.style.display = 'none'
+            exibirSlide(slides, getProximo(slides, slide)) //pra fazer ir sem parar, de forma ciclica
+        })
+    }
+
+    function getProximo(lista, atual) {
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[i] : lista[0]
+    }
+
+    slider()
+</script>
