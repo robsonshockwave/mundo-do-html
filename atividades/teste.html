@@ -1,16 +1,20 @@
 <h1>Funcionou!!!</h1>
 <p>
-    <h3>Código em JS</h3>
-    document.querySelectorAll('[wm-nav]').forEach(link => { //o 'a' é a tag<br>
-    ㅤㅤconst conteudo = document.getElementById('conteudo') //fica na section, responsável por trocar o conteudo<br>
-    <br>
-    ㅤㅤlink.onclick = function(e) { //evento que recebe do clique<br>
-    ㅤㅤㅤㅤe.preventDefault()<br>
-    ㅤㅤㅤㅤfetch(link.getAttribute('wm-nav')) //chamada ajax<br>
-    ㅤㅤㅤㅤㅤㅤ.then(resp => resp.text()) //pega o conteudo html da página que fez uma requisição<br>
-    ㅤㅤㅤㅤㅤㅤ.then(html => conteudo.innerHTML = html)<br>
-    ㅤㅤ}<br>
-    })
+    <h2>Código em JS</h2>
+    <pre>
+        <code>
+            document.querySelectorAll('[wm-nav]').forEach(link => { //o 'a' é a tag
+            ㅤㅤconst conteudo = document.getElementById('conteudo') //fica na section, responsável por trocar o conteudo
+            
+            ㅤㅤlink.onclick = function(e) { //evento que recebe do clique
+            ㅤㅤㅤㅤe.preventDefault()
+            ㅤㅤㅤㅤfetch(link.getAttribute('wm-nav')) //chamada ajax
+            ㅤㅤㅤㅤㅤㅤ.then(resp => resp.text()) //pega o conteudo html da página que fez uma requisição
+            ㅤㅤㅤㅤㅤㅤ.then(html => conteudo.innerHTML = html)
+            ㅤㅤ}
+            })
+        </code>
+    </pre>
 </p>
 <p>
     <h3>Explicação</h3>

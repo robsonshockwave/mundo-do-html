@@ -56,15 +56,17 @@ none recebe block para ficar invisível, caso contrário receberá none para fic
 
 <p><b>Abrir e Fechar Display: </b>o exemplo acima foi utilizado esse método. Segue abaixo o código e a explicação dele.</p>
 <h3>Código em JS</h3>
-<p>
-    document.querySelectorAll('[wm-folder]').forEach(folder => {<br>
-    ㅤㅤfolder.onclick = function(e) { //função recebendo um evento<br>
-    ㅤㅤㅤㅤconst ul = folder.nextElementSibling<br>
-    ㅤㅤㅤㅤconst d = ul.style.display //visiblidade<br>
-    ㅤㅤㅤㅤul.style.display = d === 'none' ? 'block' : 'none'<br>
-    ㅤㅤ}<br>
-    })<br>
-</p>
+<pre>
+    <code>
+            document.querySelectorAll('[wm-folder]').forEach(folder => {
+            ㅤㅤfolder.onclick = function(e) { //função recebendo um evento
+            ㅤㅤㅤㅤconst ul = folder.nextElementSibling
+            ㅤㅤㅤㅤconst d = ul.style.display //visiblidade
+            ㅤㅤㅤㅤul.style.display = d === 'none' ? 'block' : 'none'
+            ㅤㅤ}
+            })
+    </code>
+</pre>
 <h3>Explicação</h3>
 Primeiro vai selecionar todos os elementos que está marcado com a propriedade especial "wm-folder" no span, depois irá fazer um forEach pra pegar cada um dos elementos, e quando clicar nesses elementos através do onclick irá disparar uma função que recebe um evento. <br>
 const ul = folder.nextElementSibling &rarr; vai pegar o elemento depois do span, ou seja, será a ul. <br>
