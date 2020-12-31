@@ -24,7 +24,7 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 ## ⌨ Como executar o projeto
 
 ```bash
->> Para visualizar através do servidor WebKit é necessário ter o Node instalado. <<
+# >> Para visualizar através do servidor WebKit é necessário ter o Node instalado. <<
 
 # Clonar o repositório
 git clone https://github.com/robsonshockwave/mundo-do-html.git
